@@ -10,10 +10,10 @@ Documentação de uso criada para o Backend da aplicação do **Hackathon Smiles
 
 Se você preferir pode navegar por tópicos.
 
-* **[Instalação](#instalacao)**
+* **[Instalação](#instalação)**
 * **[Wish List](wish-list)**
 * **[Presets](presets)**
-* **[Conclusão](conslusao)**
+* **[Conclusão](conclusão)**
 
 ## Instalação
 
@@ -123,9 +123,9 @@ Como na criação de um item de viagem, o item de produto retorna
 
 A aplicação faz uso de alguns dados estáticos que simulam a busca de dados externas, como preços de pacotes de viagens e preços de produtos e itens de shopping.
 
-Você pode encontrar esses dados estátios no formato `.json` navegando até a pasta `providers`, ou clicando **[aqui](src/providers)**.
+Você pode encontrar esses dados estátios no formato `.json` navegando até a pasta `providers`, ou clicando **[aqui](/tree/main/src/providers)**.
 
-O tratamento e a busca desses dados estão presentes navegando até a pasta `lib` ou clicando **[aqui](src/lib)**.
+O tratamento e a busca desses dados estão presentes navegando até a pasta `lib` ou clicando **[aqui](/tree/main/src/lib)**.
 
 ## Conclusão
 
