@@ -10,5 +10,5 @@ export interface CreateTravelProps extends WishListProps {
 }
 
 export interface CreateProductProps extends WishListProps {
-  price: number;
+  product: string;
 }

@@ -30,7 +30,29 @@ export default class WishListController {
         error: err.message || 'Unexpected error'
       });
     }
-    
-    return response.json();
+  }
+
+  async createProduct(request: Request, response: Response): Promise<Response> {
+    const {
+      name,
+      description,
+      product,
+      objective
+    } = request.body;
+
+    try {
+      const productInfo = await this.createListUseCase.createProduct({
+        name,
+        description,
+        product,
+        objective,
+      });
+
+      return response.json(productInfo);
+    }catch(err) {
+      return response.status(400).json({
+        error: err.message || 'Unexpected error'
+      });
+    }
   }
 }

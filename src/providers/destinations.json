@@ -1,19 +1,17 @@
-{
-  "travels": [
-    {
-      "name": "Florianópolis",
-      "price": 1200,
-      "daily": 600
-    },
-    {
-      "name": "São Paulo",
-      "price": 1500,
-      "daily": 800
-    },
-    {
-      "name": "Curitiba",
-      "price": 1400,
-      "daily": 620
-    }
-  ]
-}
+[
+  {
+    "name": "Florianópolis",
+    "price": 1200,
+    "daily": 600
+  },
+  {
+    "name": "São Paulo",
+    "price": 1500,
+    "daily": 800
+  },
+  {
+    "name": "Curitiba",
+    "price": 1400,
+    "daily": 620
+  }
+]
