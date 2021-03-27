@@ -11,9 +11,9 @@ Documentação de uso criada para o Backend da aplicação do **Hackathon Smiles
 Se você preferir pode navegar por tópicos.
 
 * **[Instalação](#instalação)**
-* **[Wish List](wish-list)**
-* **[Presets](presets)**
-* **[Conclusão](conclusão)**
+* **[Wish List](#wish-list)**
+* **[Presets](#presets)**
+* **[Conclusão](#conclusão)**
 
 ## Instalação
 
