@@ -14,3 +14,20 @@ export default class Wishlist {
     }
   }
 }
+
+export class Travel {
+  from: string;
+  to: string;
+
+  constructor(props: Travel) {
+    Object.assign(this, props);
+  }
+}
+
+export class Product {
+  product: string;
+
+  constructor(props: Product) {
+    Object.assign(this, props);
+  }
+}

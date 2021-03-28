@@ -1,12 +1,21 @@
-import { createProduct, createTravel } from "../../lib/createItem";
-import Wishlist from "../../models/Wishlist";
+import { CreateProduct, CreateTravel } from "../../lib/createItem";
+import Wishlist, { Product, Travel } from "../../models/Wishlist";
 import { CreateProductProps, CreateTravelProps } from "./listDTO";
 
 export class CreateListUseCase {
   async createTravel(data: CreateTravelProps) {
-    const createItem = new Wishlist(data);
+    const createItem = new Wishlist({
+      name: data.name,
+      description: data.description,
+      objective: data.objective
+    });
 
-    const travel = await createTravel(data.to);
+    const createTravel = new Travel({
+      from: data.from,
+      to: data.to,
+    });
+
+    const travel = await CreateTravel(createTravel.to);
 
     return {
       id: createItem.id,
@@ -15,9 +24,17 @@ export class CreateListUseCase {
   }
 
   async createProduct(data: CreateProductProps) {
-    const createItem = new Wishlist(data);
+    const createItem = new Wishlist({
+      name: data.name,
+      description: data.description,
+      objective: data.objective,
+    });
 
-    const product = await createProduct(data.product);
+    const createProduct = new Product({
+      product: data.product
+    });
+
+    const product = await CreateProduct(createProduct.product);
 
     return {
       id: createItem.id,
