@@ -44,11 +44,11 @@ Para criar um item você pode fazer um requisição do tipo `POST` em `/create-t
 // POST /create-travel
 
 {
-	name: "Nome do objetivo",
-	description: "Descrição do item"
-	from: "De onde vai partir",
-	to: "Para onde vai",
-	objective: "Quanto pretende polpar"
+	"name": "Nome do objetivo",
+	"description": "Descrição do item"
+	"from": "De onde vai partir",
+	"to": "Para onde vai",
+	"objective": "Quanto pretende polpar"
 }
 ```
 
@@ -56,11 +56,11 @@ por exemplo
 
 ```bash
 {
-	name: "Férias",
-	description: "Planejamento paras férias"
-	from: "Timbó Grande",
-	to: "Florianópolis",
-	objective: 100
+	"name": "Férias",
+	"description": "Planejamento paras férias"
+	"from": "Timbó Grande",
+	"to": "Florianópolis",
+	"objective": 100
 }
 ```
 
@@ -87,10 +87,10 @@ Para criar um produto na wish list você pode fazer um requisição do tipo `POS
 // POST /create-product
 
 {
-	name: "Nome do objetivo",
-	product: "Produto"
-	description: "Descrição do item"
-	objective: "Quanto pretende polpar"
+	"name": "Nome do objetivo",
+	"product": "Produto"
+	"description": "Descrição do item"
+	"objective": "Quanto pretende polpar"
 }
 ```
 
