@@ -24,10 +24,6 @@ export class CreateItems1616955027985 implements MigrationInterface {
           name: 'objective',
           type: 'decimal'
         },
-        {
-          name: 'item_id',
-          type: 'integer'
-        },
       ]
     }));
   }

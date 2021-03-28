@@ -1,8 +1,13 @@
+import ItemRepository from "../../database/repositories/itemRepository";
 import { CreateProduct, CreateTravel } from "../../lib/createItem";
 import Wishlist, { Product, Travel } from "../../models/Wishlist";
 import { CreateProductProps, CreateTravelProps } from "./listDTO";
 
 export class CreateListUseCase {
+  constructor (
+    private itemRepository: ItemRepository,
+  ){}
+
   async createTravel(data: CreateTravelProps) {
     const createItem = new Wishlist({
       name: data.name,
@@ -13,13 +18,16 @@ export class CreateListUseCase {
     const createTravel = new Travel({
       from: data.from,
       to: data.to,
+      item_id: createItem.id
     });
 
     const travel = await CreateTravel(createTravel.to);
 
+    const saveItem = await this.itemRepository.saveTravel(createItem, createTravel);
+
     return {
-      id: createItem.id,
-      travel
+      id: saveItem.id,
+      item: travel,
     };
   }
 
@@ -31,14 +39,17 @@ export class CreateListUseCase {
     });
 
     const createProduct = new Product({
-      product: data.product
+      product: data.product,
+      item_id: createItem.id,
     });
 
     const product = await CreateProduct(createProduct.product);
 
+    const saveItem = await this.itemRepository.saveProduct(createItem, createProduct);
+
     return {
-      id: createItem.id,
-      product
+      id: saveItem.id,
+      item: product,
     };
   }
 }

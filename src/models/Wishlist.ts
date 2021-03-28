@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 
 @Entity('items')
@@ -35,6 +35,10 @@ export class Travel {
   @Column()
   to: string;
 
+  @Column()
+  @JoinColumn()
+  item_id: string;
+
   constructor(props: Omit<Travel, 'id'>) {
     Object.assign(this, props);
   }
@@ -47,6 +51,10 @@ export class Product {
 
   @Column()
   product: string;
+
+  @Column()
+  @JoinColumn()
+  item_id: string;
 
   constructor(props: Omit<Product, 'id'>) {
     Object.assign(this, props);
