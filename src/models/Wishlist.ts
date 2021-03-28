@@ -1,9 +1,18 @@
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 
+@Entity('items')
 export default class Wishlist {
+  @PrimaryColumn()
   readonly id: string;
+
+  @Column()
   name: string;
+
+  @Column()
   description: string;
+
+  @Column()
   objective: number;
 
   constructor(props: Omit<Wishlist, 'id'>, id?: string) {
@@ -15,19 +24,31 @@ export default class Wishlist {
   }
 }
 
+@Entity('travels')
 export class Travel {
+  @PrimaryGeneratedColumn('increment')
+  readonly id: string;
+
+  @Column()
   from: string;
+
+  @Column()
   to: string;
 
-  constructor(props: Travel) {
+  constructor(props: Omit<Travel, 'id'>) {
     Object.assign(this, props);
   }
 }
 
+@Entity('products')
 export class Product {
+  @PrimaryGeneratedColumn('increment')
+  readonly id: string;
+
+  @Column()
   product: string;
 
-  constructor(props: Product) {
+  constructor(props: Omit<Product, 'id'>) {
     Object.assign(this, props);
   }
 }
