@@ -6,6 +6,13 @@ Documentação do Backend.
 
 Documentação de uso criada para o Backend da aplicação do **Hackathon Smiles.**
 
+Projeto construido com **Node.js** e **Typescript**.
+
+Mais algums ferramentas usadas foram
+
+* **Express**
+* **UUID**
+
 ## Tópicos
 
 Se você preferir pode navegar por tópicos.
