@@ -1,6 +1,14 @@
 [
   {
-    "name": "Computador",
-    "price": 5000
+    "name": "Smartphone",
+    "price": 3000
+  },
+  {
+    "name": "Smart watch",
+    "price": 1200
+  },
+  {
+    "name": "Mala para viagens",
+    "price": 200
   }
 ]
