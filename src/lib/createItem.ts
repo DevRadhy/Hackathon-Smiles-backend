@@ -14,10 +14,10 @@ export function setItem(props: string, servicePath: string) {
   }
 }
 
-export async function createTravel(to: string) {
+export async function CreateTravel(to: string) {
   return setItem(to, 'destinations.json');
 }
 
-export async function createProduct(product: string) {
+export async function CreateProduct(product: string) {
   return setItem(product, 'products.json');
 }
