@@ -45,7 +45,7 @@ Para criar um item você pode fazer um requisição do tipo `POST` em `/create-t
 
 {
 	"name": "Nome do objetivo",
-	"description": "Descrição do item"
+	"description": "Descrição do item",
 	"from": "De onde vai partir",
 	"to": "Para onde vai",
 	"objective": "Quanto pretende polpar"
@@ -88,8 +88,8 @@ Para criar um produto na wish list você pode fazer um requisição do tipo `POS
 
 {
 	"name": "Nome do objetivo",
-	"product": "Produto"
-	"description": "Descrição do item"
+	"product": "Produto",
+	"description": "Descrição do item",
 	"objective": "Quanto pretende polpar"
 }
 ```
