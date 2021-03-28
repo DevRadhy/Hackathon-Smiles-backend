@@ -23,6 +23,10 @@ export class CreateListUseCase {
 
     const travel = await CreateTravel(createTravel.to);
 
+    if(!travel) {
+      throw new Error('Pacote de viagem não encontrado.');
+    }
+
     const saveItem = await this.itemRepository.saveTravel(createItem, createTravel);
 
     return {
@@ -44,6 +48,10 @@ export class CreateListUseCase {
     });
 
     const product = await CreateProduct(createProduct.product);
+
+    if(!product) {
+      throw new Error('Produto não encontrado.');
+    }
 
     const saveItem = await this.itemRepository.saveProduct(createItem, createProduct);
 

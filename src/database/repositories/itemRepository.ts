@@ -7,11 +7,15 @@ export default class ItemRepository {
     const travelsRepository = getRepository(Travel);
     
     const saveItem = await itemRepository.save(item);
-    const saveTravels = await travelsRepository.save(data);
+    const saveTravel = await travelsRepository.save(data);
+
+    if(!saveItem || !saveTravel) {
+      throw new Error('Não foi possivel salvar o item.')
+    }
 
     return {
       id: saveItem.id,
-      item: saveTravels,
+      item: saveTravel,
     };
   }
 
@@ -21,6 +25,10 @@ export default class ItemRepository {
     
     const saveItem = await itemRepository.save(item);
     const saveProduct = await productRepository.save(data);
+
+    if(!saveItem || !saveProduct) {
+      throw new Error('Não foi possivel salvar o item.')
+    }
 
     return {
       id: saveItem.id,
