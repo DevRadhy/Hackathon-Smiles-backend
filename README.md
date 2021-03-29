@@ -11,6 +11,8 @@ Projeto construido com **Node.js** e **Typescript**.
 Mais algums ferramentas usadas foram
 
 * **Express**
+* **Postgres**
+* **TypeORM**
 * **UUID**
 
 ## Tópicos
@@ -18,6 +20,7 @@ Mais algums ferramentas usadas foram
 Se você preferir pode navegar por tópicos.
 
 * **[Instalação](#instalação)**
+* **[Migrations](#migrations)**
 * **[Wish List](#wish-list)**
 * **[Presets](#presets)**
 * **[Conclusão](#conclusão)**
@@ -32,12 +35,45 @@ Você pode começar clonando o repositório da seguinte forma:
 git clone https://github.com/DevRadhy/Hackathon-Smiles-backend.git
 ```
 
+Após clonar o repositório você deverá configurar as variáveis de ambiente, crie um arquivo `.env` na pasta raiz do projeto, como seguinte conteúdo
+
+```
+# Postgres credentials
+POSTGRES_HOST='host onde está rodando o postgres'
+PRSTGRES_PORT='porta onde está rodando'
+POSTGRES_DB='nome do bando de dados'
+POSTGRES_USER='usuário do banco de dados'
+POSTGRES_PASSWORD='senha do usuário'
+```
+
+essas configuranções serão usadas com o `Typeorm` para rodar o banco de dados.
+
 e em seguida fazer a instalação das dependências.
 
 ```bash
 yarn install
 # ou npm install
 ```
+
+Para iniciar a aplicação basta colocar o seguinte comando no terminal
+
+```bash
+yarn dev
+# ou npm run dev
+```
+
+Para acessar a aplicação você pode entra em `http://localhost:3333`
+
+## Migrations
+
+Para configurar o bando de dados você pode usar o seguinte comando no terminal
+
+```bash
+yarn typeorm migration:run
+# ou npm run typeorm migration:run
+```
+
+O `TypeORM` configurará o banco de dados na ordem dos arquivos na pasta `migrations`, que você pode chegar navegando pelos arquivos ou clicando **[aqui](src/database/migrations)**
 
 ## Wish List
 
@@ -78,7 +114,7 @@ Após a criação de item, a requisição terá a seguinte resposta:
 
 {
   "id": "f2f69cef-98e0-4c93-880e-4ffe2d0931c5",
-  "travel": {
+  "item": {
     "name": "Florianópolis",
     "price": 1200,
     "daily": 600
@@ -119,7 +155,7 @@ Como na criação de um item de viagem, o item de produto retorna
 
 {
   "id": "75d846a2-6c95-4272-968d-a9ed6ac76fe2",
-  "product": {
+  "item": {
     "name": "Computador",
     "price": 5000
   }
